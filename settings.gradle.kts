@@ -1,9 +1,8 @@
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 rootProject.name = "GradleTemplate"
 
 listOf(
-    "stock" to "stock"
+    "stock" to "stock",
+    "paper" to "paper"
 ).forEach(::includeProject)
 
 fun includeProject(pair: Pair<String, String>): Unit = includeProject(pair.first, pair.second)
@@ -24,8 +23,4 @@ fun includeProject(name: String) {
     includeProject(name) {
         this.name = "${rootProject.name.lowercase()}-$name"
     }
-}
-
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.9.0"
 }
