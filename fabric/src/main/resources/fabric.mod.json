@@ -16,7 +16,9 @@
   "environment" : "server",
   "entrypoints" : {
     "client" : [],
-    "server": []
+    "server": [
+      "com.ryderbelserion.gradle.fabric.GradleTemplate"
+    ]
   },
   "depends" : {
     "fabricloader" : ">=${fabricloader}",
