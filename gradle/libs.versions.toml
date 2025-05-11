@@ -1,40 +1,33 @@
 [plugins]
-paperweight = { id = "io.papermc.paperweight.userdev", version.ref = "paperweight" }
-hangar = { id = "io.papermc.hangar-publish-plugin", version.ref = "hangar" }
 runPaper = { id = "xyz.jpenilla.run-paper", version.ref = "runPaper" }
 minotaur = { id = "com.modrinth.minotaur", version.ref = "minotaur" }
+fabric-loom = { id = "fabric-loom", version.ref = "fabricLoom" }
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
 
 [libraries]
 # Paper API
 paper = { module = "io.papermc.paper:paper-api", version.ref = "paper" }
 
-# Fusion Core API
-fusion-paper = { module = "com.ryderbelserion.fusion:fusion-paper", version.ref = "fusion" }
+# Fabric API
+fabric-loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fabricLoader" }
+fabric-api = { group = "net.fabricmc.fabric-api", name = "fabric-api", version.ref = "fabricApi" }
 
-# Triumph API
-triumph-cmds = { module = "dev.triumphteam:triumph-cmds-bukkit", version.ref = "cmds" }
-
-# Misc API
-jalu = { module = "ch.jalu:configme", version.ref = "jalu" }
+# Mojang API
+minecraft = { group = "com.mojang", name = "minecraft", version.ref = "minecraft" }
 
 [versions]
+version = "0.0.1"
+
 # Paper API
 paper = "1.21.5-R0.1-SNAPSHOT"
 minecraft = "1.21.5"
 
+# https://fabricmc.net/develop/
+fabricApi = "0.119.5+1.21.5"
+fabricLoader = "0.16.10"
+fabricLoom = "1.10-SNAPSHOT"
+
 # Gradle Plugins
-paperweight = "2.0.0-beta.16"
 shadow = "9.0.0-beta12"
 runPaper = "2.3.1"
 minotaur = "2.8.7"
-hangar = "0.1.2"
-
-# Fusion API
-fusion = "0.34.0"
-
-# Misc API
-jalu = "1.4.3"
-
-# Triumph API
-cmds = "2.2.0"

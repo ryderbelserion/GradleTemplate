@@ -8,19 +8,24 @@ project.group = "${rootProject.group}.paper"
 project.version = rootProject.version
 project.description = "A version of GradleTemplate for Paper based servers!"
 
+base {
+    archivesName = "${rootProject.name}-${name}"
+}
+
 tasks {
     processResources {
-        inputs.properties("name" to rootProject.name)
-        inputs.properties("version" to project.version)
-        inputs.properties("group" to project.group)
-        inputs.properties("apiVersion" to libs.versions.minecraft.get())
-        inputs.properties("description" to project.description)
-        inputs.properties("website" to rootProject.properties["website"].toString())
+        filteringCharset = Charsets.UTF_8.name()
 
         filesMatching("paper-plugin.yml") {
-            expand(inputs.properties)
+            expand("name" to rootProject.name,
+                "description" to project.description,
+                "minecraft" to libs.versions.minecraft.get(),
+                "version" to project.version,
+                "group" to project.group)
         }
     }
+
+    runPaper.folia.registerTask()
 
     runServer {
         jvmArgs("-Dnet.kyori.ansi.colorLevel=truecolor")

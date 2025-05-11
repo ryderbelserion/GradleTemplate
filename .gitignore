@@ -1,8 +1,9 @@
-### Intellij
+# Common Directories
+.gradle
 .kotlin
 .idea
 
-### Gradle
-.gradle
-build/
+build
+/*.jar
+
 run/
