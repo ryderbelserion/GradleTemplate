@@ -8,10 +8,6 @@ project.group = "${rootProject.group}.fabric"
 project.version = rootProject.version
 project.description = "A nifty mod for Fabric based servers!"
 
-base {
-    archivesName = "${rootProject.name}-${project.name}"
-}
-
 repositories {
     maven("https://maven.fabricmc.net/")
 }

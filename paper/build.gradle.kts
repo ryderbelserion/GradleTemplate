@@ -8,10 +8,6 @@ project.group = "${rootProject.group}.paper"
 project.version = rootProject.version
 project.description = "A nifty plugin for Paper based servers!"
 
-base {
-    archivesName = "${rootProject.name}-${project.name}"
-}
-
 tasks {
     processResources {
         filteringCharset = Charsets.UTF_8.name()
