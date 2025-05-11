@@ -6,10 +6,10 @@ plugins {
 
 project.group = "${rootProject.group}.fabric"
 project.version = rootProject.version
-project.description = "A version of GradleTemplate for Fabric based servers!"
+project.description = "A nifty mod for Fabric based servers!"
 
 base {
-    archivesName = "${rootProject.name}-${name}"
+    archivesName = "${rootProject.name}-${project.name}"
 }
 
 repositories {
@@ -35,5 +35,11 @@ tasks {
                 "minecraft" to libs.versions.minecraft.get(),
                 "fabricloader" to libs.versions.fabricLoader.get())
         }
+    }
+
+    modrinth {
+        loaders.add("fabric")
+        versionType.set("release")
+        uploadFile.set(jar.get())
     }
 }

@@ -6,10 +6,10 @@ plugins {
 
 project.group = "${rootProject.group}.paper"
 project.version = rootProject.version
-project.description = "A version of GradleTemplate for Paper based servers!"
+project.description = "A nifty plugin for Paper based servers!"
 
 base {
-    archivesName = "${rootProject.name}-${name}"
+    archivesName = "${rootProject.name}-${project.name}"
 }
 
 tasks {
@@ -23,6 +23,12 @@ tasks {
                 "version" to project.version,
                 "group" to project.group)
         }
+    }
+
+    modrinth {
+        loaders.addAll(listOf("paper", "folia", "purpur"))
+        versionType.set("beta")
+        uploadFile.set(jar.get())
     }
 
     runPaper.folia.registerTask()

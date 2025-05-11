@@ -4,6 +4,5 @@ main: '${group}.${name}'
 version: '${version}'
 api-version: '${minecraft}'
 description: '${description}'
-website: '${website}'
 
 folia-supported: true
