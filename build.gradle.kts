@@ -29,7 +29,7 @@ tasks.withType<Jar> {
 modrinth {
     token = System.getenv("MODRINTH_TOKEN")
 
-    projectId = "SimpleEdit"
+    projectId = rootProject.name
 
     versionName = "${rootProject.version}"
     versionNumber = "${rootProject.version}"
