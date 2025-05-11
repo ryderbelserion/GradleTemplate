@@ -25,12 +25,6 @@ tasks {
         }
     }
 
-    modrinth {
-        loaders.addAll(listOf("paper", "folia", "purpur"))
-        versionType.set("beta")
-        uploadFile.set(jar.get())
-    }
-
     runPaper.folia.registerTask()
 
     runServer {

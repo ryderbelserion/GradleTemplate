@@ -7,26 +7,44 @@ plugins {
 rootProject.version = "0.1.0"
 rootProject.group = "com.ryderbelserion"
 
-subprojects {
-    apply(plugin = "com.modrinth.minotaur")
+val mergedJar by configurations.creating<Configuration> {
+    isCanBeResolved = true
+    isCanBeConsumed = false
+    isVisible = false
+}
 
-    tasks {
-        modrinth {
-            token.set(System.getenv("MODRINTH_TOKEN"))
+dependencies {
+    mergedJar(project(":fabric"))
+    mergedJar(project(":paper"))
+}
 
-            projectId.set("SimpleEdit")
+tasks.withType<Jar> {
+    dependsOn(mergedJar)
 
-            versionName.set("${rootProject.name} ${rootProject.version}")
-            versionNumber.set(rootProject.version.toString())
+    val jars = mergedJar.map { zipTree(it) }
 
-            changelog.set(rootProject.file("changelog.md").readText(Charsets.UTF_8))
+    from(jars)
+}
 
-            gameVersions.set(listOf("1.21.5"))
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN")
 
-            syncBodyFrom.set(rootProject.file("description.md").readText(Charsets.UTF_8))
+    projectId = "SimpleEdit"
 
-            autoAddDependsOn.set(false)
-            detectLoaders.set(false)
-        }
-    }
+    versionName = "${rootProject.version}"
+    versionNumber = "${rootProject.version}"
+    versionType = "alpha"
+
+    changelog = rootProject.file("changelog.md").readText(Charsets.UTF_8)
+
+    gameVersions.addAll(listOf(libs.versions.minecraft.get()))
+
+    uploadFile = tasks.jar.get().archiveFile.get()
+
+    loaders.addAll(listOf("paper", "folia", "purpur", "fabric"))
+
+    syncBodyFrom = rootProject.file("description.md").readText(Charsets.UTF_8)
+
+    autoAddDependsOn = false
+    detectLoaders = false
 }

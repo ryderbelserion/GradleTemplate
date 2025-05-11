@@ -36,10 +36,4 @@ tasks {
                 "fabricloader" to libs.versions.fabricLoader.get())
         }
     }
-
-    modrinth {
-        loaders.add("fabric")
-        versionType.set("release")
-        uploadFile.set(jar.get())
-    }
 }
