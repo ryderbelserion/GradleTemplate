@@ -33,7 +33,7 @@ modrinth {
 
     versionName = "${rootProject.version}"
     versionNumber = "${rootProject.version}"
-    versionType = "alpha"
+    versionType = "release"
 
     changelog = rootProject.file("changelog.md").readText(Charsets.UTF_8)
 
