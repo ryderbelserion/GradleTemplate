@@ -2,10 +2,6 @@ plugins {
     `java-library`
 }
 
-base {
-    archivesName = "${rootProject.name}-${project.name}"
-}
-
 repositories {
     mavenCentral()
 }
