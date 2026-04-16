@@ -1,7 +1,5 @@
 plugins {
     id("com.modrinth.minotaur")
-
-    id("shared-plugin")
 }
 
 modrinth {

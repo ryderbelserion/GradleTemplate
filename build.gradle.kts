@@ -1,9 +1,11 @@
 plugins {
+    id("shared-plugin")
+
+    id("modrinth-plugin")
+    id("hangar-plugin")
+
     id("java-plugin")
 }
-
-rootProject.version = "0.1.0"
-rootProject.group = "com.ryderbelserion"
 
 val mergedJar by configurations.creating {
     isCanBeResolved = true
