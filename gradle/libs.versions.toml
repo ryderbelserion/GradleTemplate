@@ -1,33 +1,59 @@
+[versions]
+# Paper API
+paperweight = "2.0.0-beta.21" # https://github.com/PaperMC/paperweight
+paper = "26.1.2.build.5-alpha" # https://github.com/PaperMC/Paper
+minecraft = "26.1.2" # https://minecraft.net
+
+# https://fabricmc.net/develop/
+fabric-api = "0.146.0+26.1.2"
+fabric-loader = "0.19.2"
+fabric-loom = "1.16-SNAPSHOT"
+
+# Gradle Plugins
+run-paper = "3.0.2" # https://github.com/jpenilla/run-task
+minotaur = "2.9.0" # https://github.com/modrinth/minotaur
+feather = "0.4.0" # https://github.com/ryderbelserion/Feather
+hangar = "0.1.4" # https://github.com/HangarMC/hangar-publish-plugin
+shadow = "9.4.1" # https://github.com/GradleUp/shadow
+
 [plugins]
-runPaper = { id = "xyz.jpenilla.run-paper", version.ref = "runPaper" }
-minotaur = { id = "com.modrinth.minotaur", version.ref = "minotaur" }
-fabric-loom = { id = "fabric-loom", version.ref = "fabricLoom" }
-shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+fabric-loom = { id = "fabric-loom", version.ref = "fabric-loom" }
 
 [libraries]
-# Paper API
-paper = { module = "io.papermc.paper:paper-api", version.ref = "paper" }
+# https://github.com/PaperMC/paperweight
+paperweight = { module = "io.papermc.paperweight.userdev:io.papermc.paperweight.userdev.gradle.plugin", version.ref = "paperweight" }
+
+# https://github.com/ryderbelserion/Feather
+feather = { module = "com.ryderbelserion.feather.core:com.ryderbelserion.feather.core.gradle.plugin", version.ref = "feather" }
+
+# https://github.com/HangarMC/hangar-publish-plugin
+hangar = { module = "io.papermc.hangar-publish-plugin:io.papermc.hangar-publish-plugin.gradle.plugin", version.ref = "hangar" }
+
+# https://github.com/modrinth/minotaur
+minotaur = { module = "com.modrinth.minotaur:com.modrinth.minotaur.gradle.plugin", version.ref = "minotaur" }
+
+# https://github.com/GradleUp/shadow
+shadow = { module = "com.gradleup.shadow:shadow-gradle-plugin", version.ref = "shadow" }
+
+# https://github.com/jpenilla/run-task
+run-paper = { module = "xyz.jpenilla:run-task", version.ref = "run-paper" }
 
 # Fabric API
-fabric-loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fabricLoader" }
-fabric-api = { group = "net.fabricmc.fabric-api", name = "fabric-api", version.ref = "fabricApi" }
+fabric-api = { group = "net.fabricmc.fabric-api", name = "fabric-api", version.ref = "fabric-api" }
+fabric-loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fabric-loader" }
 
 # Mojang API
 minecraft = { group = "com.mojang", name = "minecraft", version.ref = "minecraft" }
 
-[versions]
-version = "0.0.1"
+[bundles]
+build = [
+    "minotaur",
+    "feather",
+    "hangar",
+    "shadow"
+]
 
-# Paper API
-paper = "1.21.5-R0.1-SNAPSHOT"
-minecraft = "1.21.5"
-
-# https://fabricmc.net/develop/
-fabricApi = "0.119.5+1.21.5"
-fabricLoader = "0.16.10"
-fabricLoom = "1.10-SNAPSHOT"
-
-# Gradle Plugins
-shadow = "9.0.0-beta12"
-runPaper = "2.3.1"
-minotaur = "2.8.7"
+paper = [
+    "paperweight",
+    "run-paper"
+]

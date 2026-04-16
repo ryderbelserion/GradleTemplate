@@ -1,9 +1,14 @@
-# Common Directories
+### Intellij
+.kotlin/
+.idea/
+!.idea/icon.png
+
+### Gradle
 .gradle
-.kotlin
-.idea
+build/
 
-build
-/*.jar
-
+### Servers
 run/
+
+### Output
+jars/

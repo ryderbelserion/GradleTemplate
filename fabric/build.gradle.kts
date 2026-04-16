@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.fabric.loom)
 
-    id("root-plugin")
+    id("java-plugin")
 }
 
 project.group = "${rootProject.group}.fabric"
@@ -17,19 +17,4 @@ dependencies {
     mappings(loom.officialMojangMappings())
     modCompileOnly(libs.fabric.loader)
     modCompileOnly(libs.fabric.api)
-}
-
-tasks {
-    processResources {
-        filteringCharset = Charsets.UTF_8.name()
-
-        filesMatching("fabric.mod.json") {
-            expand("name" to rootProject.name,
-                "id" to rootProject.name.lowercase(),
-                "description" to project.description,
-                "version" to project.version,
-                "minecraft" to libs.versions.minecraft.get(),
-                "fabricloader" to libs.versions.fabricLoader.get())
-        }
-    }
 }
