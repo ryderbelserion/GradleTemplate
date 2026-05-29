@@ -1,13 +1,15 @@
 [versions]
-# Paper API
+## Paper API
 paperweight = "2.0.0-beta.21" # https://github.com/PaperMC/paperweight
-paper = "26.1.2.build.5-alpha" # https://github.com/PaperMC/Paper
-minecraft = "26.1.2" # https://minecraft.net
+paper = "26.1.2.build.+" # https://github.com/PaperMC/Paper
 
-# https://fabricmc.net/develop/
-fabric-api = "0.146.0+26.1.2"
-fabric-loader = "0.19.2"
-fabric-loom = "1.16-SNAPSHOT"
+## Fabric API
+fabric-loader = "0.19.2" # https://fabricmc.net/develop/
+fabric-loom = "1.16-SNAPSHOT" # https://fabricmc.net/develop/
+fabric-api = "0.150.0+26.1.2" # https://fabricmc.net/develop/
+
+## Minecraft
+minecraft = "26.1.2" # https://minecraft.net
 
 # Gradle Plugins
 run-paper = "3.0.2" # https://github.com/jpenilla/run-task
@@ -17,7 +19,8 @@ hangar = "0.1.4" # https://github.com/HangarMC/hangar-publish-plugin
 shadow = "9.4.1" # https://github.com/GradleUp/shadow
 
 [plugins]
-fabric-loom = { id = "fabric-loom", version.ref = "fabric-loom" }
+# https://fabricmc.net/develop/
+fabric-loom = { id = "net.fabricmc.fabric-loom", version.ref = "fabric-loom" }
 
 [libraries]
 # https://github.com/PaperMC/paperweight
