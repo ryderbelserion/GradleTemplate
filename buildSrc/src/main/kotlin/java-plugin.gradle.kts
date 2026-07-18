@@ -39,9 +39,9 @@ tasks {
         inputs.properties(
             // global
             "artifact" to rootProject.name,
-            "group" to project.group,
-            "version" to project.version,
-            "description" to project.description.toString(),
+            "group" to rootProject.version,
+            "version" to rootProject.version,
+            "description" to rootProject.description.toString(),
 
             // fabric
             "id" to rootProject.name.lowercase(),
