@@ -39,7 +39,7 @@ tasks {
         inputs.properties(
             // global
             "artifact" to rootProject.name,
-            "group" to rootProject.version,
+            "group" to project.group,
             "version" to rootProject.version,
             "description" to rootProject.description.toString(),
 
