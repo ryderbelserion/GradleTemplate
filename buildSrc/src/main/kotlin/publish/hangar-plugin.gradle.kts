@@ -3,6 +3,8 @@ import org.gradle.kotlin.dsl.support.uppercaseFirstChar
 
 plugins {
     id("io.papermc.hangar-publish-plugin")
+
+    id("shared-plugin")
 }
 
 hangarPublish {
@@ -25,30 +27,6 @@ hangarPublish {
 
                 dependencies {
                     hangar("PlaceholderAPI") {
-                        required = false
-                    }
-
-                    hangar("FancyHolograms") {
-                        required = false
-                    }
-
-                    url("CMI", "https://www.spigotmc.org/resources/cmi-300-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/") {
-                        required = false
-                    }
-
-                    url("DecentHolograms", "https://modrinth.com/plugin/decentholograms") {
-                        required = false
-                    }
-
-                    url("ItemsAdder", "https://polymart.org/product/1851/itemsadder") {
-                        required = false
-                    }
-
-                    url("Oraxen", "https://polymart.org/product/629/oraxen") {
-                        required = false
-                    }
-
-                    url("Nexo", "https://polymart.org/resource/nexo.6901") {
                         required = false
                     }
                 }

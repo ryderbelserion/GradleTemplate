@@ -2,7 +2,7 @@
   "schemaVersion" : 1,
   "id" : "${id}",
   "version" : "${version}",
-  "name" : "${name}",
+  "name" : "${artifact}",
   "description" : "${description}",
   "authors" : [
     "ryderbelserion"
